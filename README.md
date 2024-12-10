@@ -72,7 +72,6 @@ As I explored the dataset, I added more columns to simplify the analysis process
 | 412 broccoli casserole               |      306168 |        40 |         6 |               9 |        5 |                5 | True        |      194.8 | 101-200         | low                |
 
 ### Univariate Analysis
-- Embed at least one plotly plot you created in your notebook that displays the distribution of a single column (see Part 2: Report for instructions).
 <iframe
   src="assets/uni_steps.html"
   width="800"
@@ -92,15 +91,13 @@ The plot above shows the distribution of recipes based on the number of ingredie
 > Although both plots have a small tail, it's not enough to be significant.
 
 ### Bivariate Analysis
-- Embed at least one plotly plot that displays the relationship between two columns.
-
 <iframe
   src="assets/bi_steps.html"
   width="800"
   height="600"
   frameborder="0"
 ></iframe>
-Description:
+The plot above is a scatter plot for the number of steps of recipes and the average ratings of those recipes. We can see that the data points are mostly clustered at the upper left corner, indicating that most recipes have less steps and higher average ratings.
 
 <iframe
   src="assets/bi_is_simple.html"
@@ -108,15 +105,13 @@ Description:
   height="600"
   frameborder="0"
 ></iframe>
-Description: 
+The plot above is a box plot showing the distribution of `average_rating` based on the `is_simple` column. We can see that recipes with more than 10 steps have slightly higher average ratings. This could mean that more complex recipes tend to have higher average ratings.
 
 ### Interesting Aggregates
-- Embed at least one grouped table or pivot table in your website and explain its significance.
 
 | calorie_range   |    steps |   count |
 |:----------------|---------:|--------:|
 | 0-100           |  7.40371 |   26435 |
-| 1000+           | 12.5791  |   12707 |
 | 101-200         |  8.60998 |   46305 |
 | 201-300         |  9.53788 |   44056 |
 | 301-400         | 10.244   |   34883 |
@@ -126,10 +121,17 @@ Description:
 | 701-800         | 12.8463  |    8080 |
 | 801-900         | 12.4846  |    5237 |
 | 901-1000        | 12.17    |    3712 |
+| 1000+           | 12.5791  |   12707 |
 
+This table shows the bins that recipes were put in based on the amount of calories, the average number of steps for each bin, and the number of recipes within each bin. The steps column seems to be increasing as the number of calories increase which could possibly mean that smaller steps with less calories tend to have higher average ratings based on the plots above.
 
+## Assessment of Missingness
+There are three columns with a significant amount of missing values: `date`, `rating`, `review`. I'm going to focus on `rating` since the other columns aren't used for this investigation.
 
+### NMAR Analysis
+I suspect the `rating` column is NMAR because people don't usually leave ratings unless they feel strongly about something. Others don't leave ratings because of the effort needed to leave the rating. Sometimes you can't just click the rating, it forces you to write something which discourages the user to leave a rating. Users could possibly think their opinions are of little importance, therefore, leading them to not leave ratings. 
 
+### Missingness Dependency
 
 
 - Embed a plotly plot related to your missingness exploration; ideas include:
@@ -147,13 +149,7 @@ Description:
   frameborder="0"
 ></iframe>
 
-<!-- | name                                 |   recipe_id |   minutes |   n_steps |   n_ingredients |   rating |   average_rating | is_simple   |   calories | calorie_range   | cal_low_mid_high   |
-|:-------------------------------------|------------:|----------:|----------:|----------------:|---------:|-----------------:|:------------|-----------:|:----------------|:-------------------|
-| 1 brownies in the world    best ever |      333281 |        40 |        10 |               9 |        4 |                4 | True        |      138.4 | 101-200         | low                |
-| 1 in canada chocolate chip cookies   |      453467 |        45 |        12 |              11 |        5 |                5 | False       |      595.1 | 501-600         | medium             |
-| 412 broccoli casserole               |      306168 |        40 |         6 |               9 |        5 |                5 | True        |      194.8 | 101-200         | low                |
-| 412 broccoli casserole               |      306168 |        40 |         6 |               9 |        5 |                5 | True        |      194.8 | 101-200         | low                |
-| 412 broccoli casserole               |      306168 |        40 |         6 |               9 |        5 |                5 | True        |      194.8 | 101-200         | low                | -->
+## Hypothesis Testing
 
 
 - Permutation:
@@ -176,3 +172,11 @@ Description:
   height="600"
   frameborder="0"
 ></iframe>
+
+## Framing a Prediction Problem
+
+## Baseline Model
+
+## Final Model
+
+## Fairness Analysis
