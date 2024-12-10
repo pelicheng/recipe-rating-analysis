@@ -1,7 +1,6 @@
 # Exploring Recipe Ratings: What Contributes to Higher Average Ratings?
 Author: Peiling Cheng
 - Show the head of your cleaned DataFrame (see Part 2: Report for instructions).
-
 - Embed at least one plotly plot you created in your notebook that displays the distribution of a single column (see Part 2: Report for instructions).
 - Embed at least one plotly plot that displays the relationship between two columns.
 - Embed at least one grouped table or pivot table in your website and explain its significance.
@@ -22,12 +21,57 @@ Author: Peiling Cheng
 
 - Embed at least one plotly plot you created in your notebook that displays the distribution of a single column (see Part 2: Report for instructions).
 
+<iframe
+  src="assets/uni_steps.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
+<iframe
+  src="assets/uni_ingredients.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
 
+- Embed at least one plotly plot that displays the relationship between two columns.
 
+<iframe
+  src="assets/bi_steps.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
+<iframe
+  src="assets/bi_is_simple.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
 
+- Embed at least one grouped table or pivot table in your website and explain its significance.
 
+<iframe
+  src="assets/grouped_agg_data.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
 
+- Embed a plotly plot related to your missingness exploration; ideas include:
 
+<iframe
+  src="assets/missingness_steps.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
+<iframe
+  src="assets/missingness_minutes.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
 
 | name                                 |   recipe_id |   minutes |   n_steps |   n_ingredients |   rating |   average_rating | is_simple   |   calories | calorie_range   | cal_low_mid_high   |
 |:-------------------------------------|------------:|----------:|----------:|----------------:|---------:|-----------------:|:------------|-----------:|:----------------|:-------------------|
@@ -36,3 +80,25 @@ Author: Peiling Cheng
 | 412 broccoli casserole               |      306168 |        40 |         6 |               9 |        5 |                5 | True        |      194.8 | 101-200         | low                |
 | 412 broccoli casserole               |      306168 |        40 |         6 |               9 |        5 |                5 | True        |      194.8 | 101-200         | low                |
 | 412 broccoli casserole               |      306168 |        40 |         6 |               9 |        5 |                5 | True        |      194.8 | 101-200         | low                |
+
+
+- Permutation:
+
+<iframe
+  src="assets/perm_steps.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
+<iframe
+  src="assets/perm_ingredients.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
+<iframe
+  src="assets/perm_calories.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
