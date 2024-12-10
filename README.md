@@ -31,10 +31,19 @@ Sharing recipes has created opportunities for creativity in the kitchen. With th
 ## Data Cleaning
 To be able to use these datasets, the following steps were applied.
 1. Left merge the recipes and interactions on `id` and `recipe_id`.
-2. Fill all ratings of 0 with `np.nan` because ratings range from 1 to 5.
-3. The average rating per recipe is added as the column `average_rating`.
-4. Dropped the columns `review`, `contributor_id`, `tags`, `steps`, and `description` because they will not be used in answering our main question.
-This is the first five rows of the cleaned DataFrame.
+2. Dropped one of the columns representing recipe id and keeping `recipe_id`.
+3. Fill all ratings of 0 with `np.nan` because ratings range from 1 to 5.
+4. The average rating per recipe is added as the column `average_rating`.
+5. Checked the data types of all the columns and cast when needed.
+    - Changed `submitted` from a string to a `datetime` object.
+    - Changed `tags` from a string to a list.
+    - Changed `nutrition` from a string to a list.
+    - Changed `steps` from a string to a list.
+    - Changed `ingredients` from a string to a list.
+    - Changed `date` from a string to a `datetime` object.
+6. Extracted columns that I will be using.
+
+This is the first five rows of the resulting DataFrame.
 
 | name                                 |   recipe_id |   minutes |   n_steps | submitted   | nutrition                                    |   n_steps |   n_ingredients |          user_id | date       |   rating |   average_rating |
 |:-------------------------------------|------------:|----------:|----------:|:------------|:---------------------------------------------|----------:|----------------:|-----------------:|:-----------|---------:|-----------------:|
@@ -45,6 +54,22 @@ This is the first five rows of the cleaned DataFrame.
 | 412 broccoli casserole               |      306168 |        40 |         6 | 2008-05-30  | [194.8, 20.0, 6.0, 32.0, 22.0, 36.0, 3.0]    |         6 |               9 | 768828           | 2013-08-02 |        5 |                5 |
 
 > While looking through the dataset, I found recipes that weren't real recipes such as 'how to preserve a husband'. Since its data weren't that different from real recipes, they were not removed.
+
+As I explored the dataset, I added more columns to simplify the analysis process.
+1. `is_simple`: `True` or `False` indicating if the recipe has less than or equal to 10 steps
+2. `calories`: the number of calories extracted from `nutrition` list
+3. `calories_range`: Bins that the number of calories fall into
+4. `cal_low_mid_high`: `low` is less than or equal to 300 calories, `medium` is less than or equal to 800 calories, and anything above that is `high`
+
+This is the first five rows of the resulting DataFrame.
+
+| name                                 |   recipe_id |   minutes |   n_steps |   n_ingredients |   rating |   average_rating | is_simple   |   calories | calorie_range   | cal_low_mid_high   |
+|:-------------------------------------|------------:|----------:|----------:|----------------:|---------:|-----------------:|:------------|-----------:|:----------------|:-------------------|
+| 1 brownies in the world    best ever |      333281 |        40 |        10 |               9 |        4 |                4 | True        |      138.4 | 101-200         | low                |
+| 1 in canada chocolate chip cookies   |      453467 |        45 |        12 |              11 |        5 |                5 | False       |      595.1 | 501-600         | medium             |
+| 412 broccoli casserole               |      306168 |        40 |         6 |               9 |        5 |                5 | True        |      194.8 | 101-200         | low                |
+| 412 broccoli casserole               |      306168 |        40 |         6 |               9 |        5 |                5 | True        |      194.8 | 101-200         | low                |
+| 412 broccoli casserole               |      306168 |        40 |         6 |               9 |        5 |                5 | True        |      194.8 | 101-200         | low                |
 
 ## Exploratory Data Analysis
 
@@ -109,13 +134,13 @@ This is the first five rows of the cleaned DataFrame.
   frameborder="0"
 ></iframe>
 
-| name                                 |   recipe_id |   minutes |   n_steps |   n_ingredients |   rating |   average_rating | is_simple   |   calories | calorie_range   | cal_low_mid_high   |
+<!-- | name                                 |   recipe_id |   minutes |   n_steps |   n_ingredients |   rating |   average_rating | is_simple   |   calories | calorie_range   | cal_low_mid_high   |
 |:-------------------------------------|------------:|----------:|----------:|----------------:|---------:|-----------------:|:------------|-----------:|:----------------|:-------------------|
 | 1 brownies in the world    best ever |      333281 |        40 |        10 |               9 |        4 |                4 | True        |      138.4 | 101-200         | low                |
 | 1 in canada chocolate chip cookies   |      453467 |        45 |        12 |              11 |        5 |                5 | False       |      595.1 | 501-600         | medium             |
 | 412 broccoli casserole               |      306168 |        40 |         6 |               9 |        5 |                5 | True        |      194.8 | 101-200         | low                |
 | 412 broccoli casserole               |      306168 |        40 |         6 |               9 |        5 |                5 | True        |      194.8 | 101-200         | low                |
-| 412 broccoli casserole               |      306168 |        40 |         6 |               9 |        5 |                5 | True        |      194.8 | 101-200         | low                |
+| 412 broccoli casserole               |      306168 |        40 |         6 |               9 |        5 |                5 | True        |      194.8 | 101-200         | low                | -->
 
 
 - Permutation:
