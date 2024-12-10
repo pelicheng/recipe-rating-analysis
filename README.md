@@ -51,12 +51,19 @@ Author: Peiling Cheng
 
 - Embed at least one grouped table or pivot table in your website and explain its significance.
 
-<iframe
-  src="assets/grouped_agg_data.html"
-  width="800"
-  height="600"
-  frameborder="0"
-></iframe>
+| calorie_range   |    steps |   count |
+|:----------------|---------:|--------:|
+| 0-100           |  7.40371 |   26435 |
+| 1000+           | 12.5791  |   12707 |
+| 101-200         |  8.60998 |   46305 |
+| 201-300         |  9.53788 |   44056 |
+| 301-400         | 10.244   |   34883 |
+| 401-500         | 11.165   |   25884 |
+| 501-600         | 11.2582  |   16192 |
+| 601-700         | 11.9804  |   10938 |
+| 701-800         | 12.8463  |    8080 |
+| 801-900         | 12.4846  |    5237 |
+| 901-1000        | 12.17    |    3712 |
 
 - Embed a plotly plot related to your missingness exploration; ideas include:
 
