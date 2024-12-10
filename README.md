@@ -28,7 +28,7 @@ Sharing recipes has created opportunities for creativity in the kitchen. With th
 | `rating`    | Rating given             |
 | `review`    | Review text              |
 
-## Data Cleaning
+## Data Cleaning and Exploratory Data Analysis
 To be able to use these datasets, the following steps were applied.
 1. Left merge the recipes and interactions on `id` and `recipe_id`.
 2. Dropped one of the columns representing recipe id and keeping `recipe_id`.
@@ -71,22 +71,31 @@ As I explored the dataset, I added more columns to simplify the analysis process
 | 412 broccoli casserole               |      306168 |        40 |         6 |               9 |        5 |                5 | True        |      194.8 | 101-200         | low                |
 | 412 broccoli casserole               |      306168 |        40 |         6 |               9 |        5 |                5 | True        |      194.8 | 101-200         | low                |
 
-## Exploratory Data Analysis
-
+### Univariate Analysis
 - Embed at least one plotly plot you created in your notebook that displays the distribution of a single column (see Part 2: Report for instructions).
-
 <iframe
   src="assets/uni_steps.html"
   width="800"
   height="600"
   frameborder="0"
 ></iframe>
+Description: 
+
 <iframe
   src="assets/uni_ingredients.html"
   width="800"
   height="600"
   frameborder="0"
 ></iframe>
+Description: 
+
+### Bivariate Analysis
+
+### Interesting Aggregates
+
+
+
+
 
 - Embed at least one plotly plot that displays the relationship between two columns.
 
