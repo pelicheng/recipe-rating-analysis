@@ -9,6 +9,12 @@ Author: Peiling Cheng
 
 # Exploring Recipe Ratings: What Contributes to Higher Average Ratings?
 Author: Peiling Cheng
+## Overview
+### Heading 3 Text
+Normal Test
+
+## Introduction
+
 - Show the head of your cleaned DataFrame (see Part 2: Report for instructions).
 
 | name                                 |   recipe_id |   minutes |   n_steps | submitted   | nutrition                                    |   n_steps |   n_ingredients |          user_id | date       |   rating |   average_rating |
