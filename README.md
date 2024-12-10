@@ -79,7 +79,7 @@ As I explored the dataset, I added more columns to simplify the analysis process
   height="600"
   frameborder="0"
 ></iframe>
-Description: 
+The plot above shows the distribution of recipes based on the number of steps each recipe takes. We can see that the distribution is close to a normal distribution, indicating that the number of steps of most recipes don't vary that much from each other. 
 
 <iframe
   src="assets/uni_ingredients.html"
@@ -87,7 +87,7 @@ Description:
   height="600"
   frameborder="0"
 ></iframe>
-Description: 
+The plot above shows the distribution of recipes based on the number of ingredients each recipe uses. Similar to the plot for steps, the distribution is close to normal. Although it does have a small tail, it's not enough to be significant.
 
 ### Bivariate Analysis
 
