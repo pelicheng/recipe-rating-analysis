@@ -43,7 +43,7 @@ To be able to use these datasets, the following steps were applied.
     - Changed `date` from a string to a `datetime` object.
 6. Extracted columns that I will be using.
 
-##### This is the first five rows of the resulting DataFrame.
+#### This is the first five rows of the resulting DataFrame.
 
 | name                                 |   recipe_id |   minutes |   n_steps | submitted   | nutrition                                    |   n_steps |   n_ingredients |          user_id | date       |   rating |   average_rating |
 |:-------------------------------------|------------:|----------:|----------:|:------------|:---------------------------------------------|----------:|----------------:|-----------------:|:-----------|---------:|-----------------:|
@@ -61,7 +61,7 @@ As I explored the dataset, I added more columns to simplify the analysis process
 3. `calories_range`: Bins that the number of calories fall into
 4. `cal_low_mid_high`: `low` is less than or equal to 300 calories, `medium` is less than or equal to 800 calories, and anything above that is `high`
 
-##### This is the first five rows of the resulting DataFrame.
+#### This is the first five rows of the resulting DataFrame.
 
 | name                                 |   recipe_id |   minutes |   n_steps |   n_ingredients |   rating |   average_rating | is_simple   |   calories | calorie_range   | cal_low_mid_high   |
 |:-------------------------------------|------------:|----------:|----------:|----------------:|---------:|-----------------:|:------------|-----------:|:----------------|:-------------------|
