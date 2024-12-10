@@ -87,16 +87,11 @@ The plot above shows the distribution of recipes based on the number of steps ea
   height="600"
   frameborder="0"
 ></iframe>
-The plot above shows the distribution of recipes based on the number of ingredients each recipe uses. Similar to the plot for steps, the distribution is close to normal. Although it does have a small tail, it's not enough to be significant.
+The plot above shows the distribution of recipes based on the number of ingredients each recipe uses. Similar to the plot for steps, the distribution is close to normal. 
+
+> Although both plots have a small tail, it's not enough to be significant.
 
 ### Bivariate Analysis
-
-### Interesting Aggregates
-
-
-
-
-
 - Embed at least one plotly plot that displays the relationship between two columns.
 
 <iframe
@@ -105,13 +100,17 @@ The plot above shows the distribution of recipes based on the number of ingredie
   height="600"
   frameborder="0"
 ></iframe>
+Description:
+
 <iframe
   src="assets/bi_is_simple.html"
   width="800"
   height="600"
   frameborder="0"
 ></iframe>
+Description: 
 
+### Interesting Aggregates
 - Embed at least one grouped table or pivot table in your website and explain its significance.
 
 | calorie_range   |    steps |   count |
@@ -127,6 +126,11 @@ The plot above shows the distribution of recipes based on the number of ingredie
 | 701-800         | 12.8463  |    8080 |
 | 801-900         | 12.4846  |    5237 |
 | 901-1000        | 12.17    |    3712 |
+
+
+
+
+
 
 - Embed a plotly plot related to your missingness exploration; ideas include:
 
