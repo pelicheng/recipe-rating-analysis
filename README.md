@@ -2,8 +2,23 @@
 Author: Peiling Cheng
 ## Introduction
 Sharing recipes has created opportunities for creativity in the kitchen. With the connections through the internet, recipes from different cultures are just a click away. [Food.com](https://www.food.com/) is one of the many websites that have built a community around recipes. From this website, I obtained two datasets, one with information about the recipe and the other about ratings given by users. Using the information obtained, I am interested in **what types of recipes tend to have higher average ratings.** Exploring this question would provide those from restaurants to small business entrepreneurs and home cooks with valuable insights when making recipe decisions.
-> blockquote
-`code`
+
+`recipe` is the first dataset we have. It contains the following columns:
+
+| Column         | Description                                                                 |
+|----------------|-----------------------------------------------------------------------------|
+| `name`         | Recipe name                                                                 |
+| `id`           | Recipe ID                                                                   |
+| `minutes`      | Minutes to prepare recipe                                                   |
+| `contributor_id` | User ID who submitted this recipe                                          |
+| `submitted`    | Date recipe was submitted                                                   |
+| `tags`         | Food.com tags for recipe                                                   |
+| `nutrition`    | Nutrition information in the form [calories (#), total fat (PDV), sugar (PDV), sodium (PDV), protein (PDV), saturated fat (PDV), carbohydrates (PDV)]; PDV stands for “percentage of daily value” |
+| `n_steps`      | Number of steps in recipe                                                   |
+| `steps`        | Text for recipe steps, in order                                              |
+| `description`  | User-provided description                                                   |
+
+
 - Show the head of your cleaned DataFrame (see Part 2: Report for instructions).
 
 | name                                 |   recipe_id |   minutes |   n_steps | submitted   | nutrition                                    |   n_steps |   n_ingredients |          user_id | date       |   rating |   average_rating |
