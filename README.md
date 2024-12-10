@@ -2,7 +2,7 @@
 Author: Peiling Cheng
 ## Introduction
 Sharing recipes has created opportunities for creativity in the kitchen. With the connections through the internet, recipes from different cultures are just a click away. [Food.com](https://www.food.com/) is one of the many websites that have built a community around recipes. From this website, I obtained two datasets, one with information about the recipe and the other about ratings given by users. Using the information obtained, I am interested in **what types of recipes tend to have higher average ratings.** Exploring this question would provide those from restaurants to small business entrepreneurs and home cooks with valuable insights when making recipe decisions.
-
+> blockquote
 
 - Show the head of your cleaned DataFrame (see Part 2: Report for instructions).
 
