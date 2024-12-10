@@ -3,7 +3,7 @@ Author: Peiling Cheng
 ## Introduction
 Sharing recipes has created opportunities for creativity in the kitchen. With the connections through the internet, recipes from different cultures are just a click away. [Food.com](https://www.food.com/) is one of the many websites that have built a community around recipes. From this website, I obtained two datasets, one with information about the recipe and the other about ratings given by users. Using the information obtained, I am interested in **what types of recipes tend to have higher average ratings.** Exploring this question would provide those from restaurants to small business entrepreneurs and home cooks with valuable insights when making recipe decisions.
 
-`recipe` is the first dataset we have. It contains the following columns:
+`recipe` is the first dataset we have. It contains 83782 rows and the following columns:
 
 | Column         | Description                                                                 |
 |----------------|-----------------------------------------------------------------------------|
@@ -18,7 +18,17 @@ Sharing recipes has created opportunities for creativity in the kitchen. With th
 | `steps`        | Text for recipe steps, in order                                              |
 | `description`  | User-provided description                                                   |
 
+`ratings` contain 731927 rows and the following columns: 
 
+| Column      | Description              |
+|-------------|--------------------------|
+| `user_id`   | User ID                  |
+| `recipe_id` | Recipe ID                |
+| `date`      | Date of interaction      |
+| `rating`    | Rating given             |
+| `review`    | Review text              |
+
+## Data Cleaning and Exploratory Data Analysis
 - Show the head of your cleaned DataFrame (see Part 2: Report for instructions).
 
 | name                                 |   recipe_id |   minutes |   n_steps | submitted   | nutrition                                    |   n_steps |   n_ingredients |          user_id | date       |   rating |   average_rating |
