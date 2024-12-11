@@ -135,8 +135,12 @@ I suspect the `rating` column is NMAR because people don't usually leave ratings
 - Embed a plotly plot related to your missingness exploration; ideas include:
 
 **Null Hypothesis:** The missingness of ratings does not depend on the number of steps of the recipe.
+
 **Alternate Hypothesis:** The missingness of ratings does depend on the number of steps of the recipe.
+
 **Test Statistic:** The difference in mean steps for missing and non-missing rating recipes.
+    - Observed Difference: 1.3386412335909217
+
 **Significance level:** 0.05
 
 <iframe
@@ -145,8 +149,16 @@ I suspect the `rating` column is NMAR because people don't usually leave ratings
   height="600"
   frameborder="0"
 ></iframe>
-After running a permutation test by shuffling the number of steps 5000 times, the p-value ended up to be **0.0**. This means we **reject the null hypothesis** and that the missingness of ratings does depend on the number of steps of the recipe.
+After running a permutation test by shuffling the number of steps 5000 times, the p-value ended up to be **0.0**. This means we **reject the null hypothesis** and that the missingness of ratings does seem to depend on the number of steps of the recipe.
 
+**Null Hypothesis:** The missingness of ratings does not depend on the number of minutes of the recipe.
+
+**Alternate Hypothesis:** The missingness of ratings does depend on the number of minutes of the recipe.
+
+**Test Statistic:** The difference in mean minutes for missing and non-missing rating recipes.
+    - Observed Difference: 51.45237039852127
+
+**Significance level:** 0.05
 
 <iframe
   src="assets/missingness_minutes.html"
@@ -154,6 +166,7 @@ After running a permutation test by shuffling the number of steps 5000 times, th
   height="600"
   frameborder="0"
 ></iframe>
+After running a permutation test by shuffling the number of minutes 5000 times, the p-value ended up to be **0.1194**. This means we **fail to reject the null hypothesis** and that the missingness of ratings does not seem to depend on the number of steps of the recipe.
 
 ## Hypothesis Testing
 
