@@ -243,7 +243,7 @@ I used `RandomForestRegressor` as the modeling algorithm and used `GridSearchCV`
 This model is an improvement from the baseline model because the RMSE value decreased.
 
 ## Fairness Analysis
-I will evaluate the fairness of my model using permutation testing.
+I will assess the fairness of my model using permutation testing.
 
 **Null Hypothesis:** The model performs equally well for both simple and not simple recipes.
 
