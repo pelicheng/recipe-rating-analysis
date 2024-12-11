@@ -165,22 +165,58 @@ After running a permutation test by shuffling the number of steps 5000 times, th
 After running a permutation test by shuffling the number of minutes 5000 times, the p-value ended up to be **0.1194**. This means we **fail to reject the null hypothesis** and that the missingness of ratings does not seem to depend on the number of steps of the recipe.
 
 ## Hypothesis Testing
+Now let's focus on answering our main question. I ran permutation tests based on the hypotheses below.
 
+### Steps
 
-- Permutation:
+**Null Hypothesis:** The average rating of recipes with more steps is the same or lower than the average rating of recipes with fewer steps.
 
+**Alternate Hypothesis:** Recipes that have more steps have a higher average rating than recipes with fewer steps.
+
+**Test Statistic:** The difference in the means of recipes that are 10 steps or less and more than 10 steps
+- Observed Difference: 0.001641837343935748
+
+**Significance Level:** 0.05
+
+This is the distribution of the differences in means after 1000 permutations. The p-value is **0.438**. This means that we **failed to reject the null hypothesis** so the average rating doesn't seem to be higher for complex recipes.
 <iframe
   src="assets/perm_steps.html"
   width="800"
   height="600"
   frameborder="0"
 ></iframe>
+
+### Ingredients
+
+**Null Hypothesis:** The average rating of recipes with more ingredients is the same or lower than the average rating of recipes with fewer ingredients.
+
+**Alternate Hypothesis:** Recipes that have more ingredients have a higher average rating than recipes with fewer ingredients.
+
+**Test Statistic:** The difference in the means of recipes that are 10 ingredients or less and more than 10 ingredients
+- Observed Difference: 0.004708147814464603
+
+**Significance Level:** 0.05
+
+This is the distribution of the differences in means after 1000 permutations. The p-value is **0.03**. This means that we **reject the null hypothesis** so the average rating does seem to be higher for recipes with more ingredients.
 <iframe
   src="assets/perm_ingredients.html"
   width="800"
   height="600"
   frameborder="0"
 ></iframe>
+
+### Calories
+
+**Null Hypothesis:** The average rating of recipes with more calories is the same or lower than the average rating of recipes with fewer calories.
+
+**Alternate Hypothesis:** Recipes that have more calories have a higher average rating than recipes with fewer calories.
+
+**Test Statistic:** The difference in the means of recipes that are 500 calories or less and more than 500 calories
+- Observed Difference: -0.017828458701047545
+
+**Significance Level:** 0.05
+
+This is the distribution of the differences in means after 1000 permutations. The p-value is **0.0**. This means that we **reject the null hypothesis** so the average rating does seem to be higher for recipes with more calories.
 <iframe
   src="assets/perm_calories.html"
   width="800"
