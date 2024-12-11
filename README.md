@@ -134,7 +134,7 @@ I suspect the `rating` column is NMAR because people don't usually leave ratings
 ### Missingness Dependency
 **Null Hypothesis:** The missingness of ratings does not depend on the number of steps of the recipe.
 
-**Alternate Hypothesis:** The missingness of ratings does depend on the number of steps of the recipe.
+**Alternative Hypothesis:** The missingness of ratings does depend on the number of steps of the recipe.
 
 **Test Statistic:** The difference in mean steps for missing and non-missing rating recipes.
 - Observed Difference: 1.3386412335909217
@@ -150,7 +150,7 @@ After running a permutation test by shuffling the number of steps 5000 times, th
 
 **Null Hypothesis:** The missingness of ratings does not depend on the number of minutes of the recipe.
 
-**Alternate Hypothesis:** The missingness of ratings does depend on the number of minutes of the recipe.
+**Alternative Hypothesis:** The missingness of ratings does depend on the number of minutes of the recipe.
 
 **Test Statistic:** The difference in mean minutes for missing and non-missing rating recipes.
 - Observed Difference: 51.45237039852127
@@ -171,7 +171,7 @@ Now let's focus on answering our main question. I ran permutation tests based on
 
 **Null Hypothesis:** The average rating of recipes with more steps is the same or lower than the average rating of recipes with fewer steps.
 
-**Alternate Hypothesis:** Recipes that have more steps have a higher average rating than recipes with fewer steps.
+**Alternative Hypothesis:** Recipes that have more steps have a higher average rating than recipes with fewer steps.
 
 **Test Statistic:** The difference in the means of recipes that are 10 steps or less and more than 10 steps
 - Observed Difference: 0.001641837343935748
@@ -190,7 +190,7 @@ This is the distribution of the differences in means after 1000 permutations. Th
 
 **Null Hypothesis:** The average rating of recipes with more ingredients is the same or lower than the average rating of recipes with fewer ingredients.
 
-**Alternate Hypothesis:** Recipes that have more ingredients have a higher average rating than recipes with fewer ingredients.
+**Alternative Hypothesis:** Recipes that have more ingredients have a higher average rating than recipes with fewer ingredients.
 
 **Test Statistic:** The difference in the means of recipes that are 10 ingredients or less and more than 10 ingredients
 - Observed Difference: 0.004708147814464603
@@ -209,7 +209,7 @@ This is the distribution of the differences in means after 1000 permutations. Th
 
 **Null Hypothesis:** The average rating of recipes with more calories is the same or lower than the average rating of recipes with fewer calories.
 
-**Alternate Hypothesis:** Recipes that have more calories have a higher average rating than recipes with fewer calories.
+**Alternative Hypothesis:** Recipes that have more calories have a higher average rating than recipes with fewer calories.
 
 **Test Statistic:** The difference in the means of recipes that are 500 calories or less and more than 500 calories
 - Observed Difference: -0.017828458701047545
