@@ -225,9 +225,33 @@ This is the distribution of the differences in means after 1000 permutations. Th
 ></iframe>
 
 ## Framing a Prediction Problem
+I plan on predicting the average ratings of recipes, which is a regression problem. I chose average rating because it is a good representation of the recipe and is what I have been focusing on. To evaluate my model, I will be using root mean squared error because it is easy to compare models. The information that the model will use to predict will all come from the `recipe` dataset which is available before making a rating.
 
 ## Baseline Model
+For my baseline model, I used a Random Forest Regressor. I split the dataset into a training set and a testing set so I can test the performance of my model without the model already "seeing" the test. I selected `n_ingredients` (quantitative, the number of ingredients) and `cal_low_mid_high` (nominal, calories category). I used One-Hot Encoding for `cal_low_mid_high` and no encoding for `n_ingredients`.
+
+**RMSE:** 0.4962343046419569
+
+I do not consider this model to be good because RMSE is quite high.
 
 ## Final Model
+For this model, I added the feature `is_simple` because it seems reasonable if users prefer simple recipes since it's less work and the box plot from earlier. I chose `minutes` because faster recipes are more convenient to make, which could result in higher ratings and the distribution plot from earlier is really concentrated.
+I used `RandomForestRegressor` as the modeling algorithm and used `GridSearchCV` to tune the hyperparameters of `n_estimators`, `max_depth`, and `min_samples_split`. I tried the values 100, 200, 300, 500, 800 for `n_estimators` and 500 was the best. I tried 5, 10, 15, 20 for `max_depth` and got 20 as the best. I tried 2, 5, 10, 20 for `min_samples_split` and got 10 for the best. It was hard to try out too many numbers because my laptop was taking too long to run.
+
+**RMSE:** 0.46535815444506295
+
+This model is an improvement from the baseline model because the RMSE value decreased.
 
 ## Fairness Analysis
+I will evaluate the fairness of my model using permutation testing.
+
+**Null Hypothesis:** The model performs equally well for both simple and not simple recipes.
+
+**Alternative Hypothesis:** The model performs worse for complex recipes compared to simple recipes
+
+**Test Statistic:** Difference between the RMSE of simple recipes and not simple recipes
+- Observed Difference: 0.021999226186705023
+
+**Significance Level:** 0.05
+
+After 500 permutations, shuffling the `is_simple` column, I got the p-value of **0.318** which is more than the significance level. Therefore, we **fail to reject the null hypothesis**, meaning this model is fair.
