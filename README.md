@@ -132,9 +132,12 @@ There are three columns with a significant amount of missing values: `date`, `ra
 I suspect the `rating` column is NMAR because people don't usually leave ratings unless they feel strongly about something. Others don't leave ratings because of the effort needed to leave the rating. Sometimes you can't just click the rating, it forces you to write something which discourages the user to leave a rating. Users could possibly think their opinions are of little importance, therefore, leading them to not leave ratings. 
 
 ### Missingness Dependency
-
-
 - Embed a plotly plot related to your missingness exploration; ideas include:
+
+**Null Hypothesis:** The missingness of ratings does not depend on the number of steps of the recipe.
+**Alternate Hypothesis:** The missingness of ratings does depend on the number of steps of the recipe.
+**Test Statistic:** The difference in mean steps for missing and non-missing rating recipes.
+**Significance level:** 0.05
 
 <iframe
   src="assets/missingness_steps.html"
@@ -142,6 +145,9 @@ I suspect the `rating` column is NMAR because people don't usually leave ratings
   height="600"
   frameborder="0"
 ></iframe>
+After running a permutation test by shuffling the number of steps 5000 times, the p-value ended up to be **0.0**. This means we **reject the null hypothesis** and that the missingness of ratings does depend on the number of steps of the recipe.
+
+
 <iframe
   src="assets/missingness_minutes.html"
   width="800"
